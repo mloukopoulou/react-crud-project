@@ -47,6 +47,10 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+app.get('*',async (req,res)=>{
+    res.sendFile(path.join(__dirname, "client/build/index.html"));
+});
+
 app.listen(PORT, () => {
     console.log(`Server is staring on port ${PORT}`)
 });
