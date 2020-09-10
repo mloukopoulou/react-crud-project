@@ -65,7 +65,7 @@ export default function Students(props) {
     }, []);
 
     const getStudents = async () => {
-        const result = await axios(process.env.REACT_APP_API_URL + 'students');
+        const result = await axios(process.env.REACT_APP_API_URL + '/students');
 
         if (result.status !== 200) {
             alert('Πρόβλημα κατά την επικοινωνία με την βάση.');
