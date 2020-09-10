@@ -24,8 +24,6 @@ import ViewColumn from '@material-ui/icons/ViewColumn';
 
 import {Link, useHistory} from 'react-router-dom';
 
-require("dotenv").config();
-
 const tableIcons = {
     Add: forwardRef((props, ref) => <AddBox {...props} ref={ref}/>),
     Check: forwardRef((props, ref) => <Check {...props} ref={ref}/>),
@@ -78,7 +76,7 @@ export default function Students(props) {
     };
 
     const deleteStudent = async (rowData) => {
-        const result = await axios.delete(process.env.REACT_APP_API_URL + 'students/' + rowData.id);
+        const result = await axios.delete('http://localhost:3001/students/' + rowData.id);
 
         if (result.status !== 200) {
             alert('Πρόβλημα κατά την επικοινωνία με την βάση.');

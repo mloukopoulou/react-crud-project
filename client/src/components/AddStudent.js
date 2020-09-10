@@ -8,8 +8,6 @@ import { useHistory } from "react-router-dom";
 
 import axios from "axios";
 
-require("dotenv").config();
-
 const useStyles = makeStyles((theme) => ({
     root: {
         '& .MuiTextField-root': {
@@ -33,7 +31,7 @@ export default function AddStudent(props) {
     };
 
     const saveStudent = async (rowData) => {
-        const result = await axios.put(process.env.REACT_APP_API_URL + 'students', rowData);
+        const result = await axios.put(process.env.REACT_APP_API_URL + '/students', rowData);
 
         if (result.status !== 200) {
             alert('Πρόβλημα κατά την επικοινωνία με την βάση.');
@@ -59,7 +57,7 @@ export default function AddStudent(props) {
             </Typography>
             <br></br>
             <form className={classes.root} noValidate autoComplete="off"
-                  onSubmit={handleOnSubmit}>
+                onSubmit={handleOnSubmit}>
                 <div>
                     <label>Όνομα</label>
                     <TextField id="first_name" name="first_name" variant="outlined" onChange={handleInputChange}/>
@@ -68,7 +66,7 @@ export default function AddStudent(props) {
                     <label>Επίθετο</label>
                     <TextField id="last_name" name="last_name" variant="outlined" onChange={handleInputChange}/>
                 </div>
-                <Button variant="outlined" color="primary" type="submit">Εισαγωγή</Button>
+                   <Button variant="outlined" color="primary" type="submit">Εισαγωγή</Button>
             </form>
         </>
     );

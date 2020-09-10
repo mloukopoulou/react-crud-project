@@ -9,15 +9,15 @@ router.get('/', async function (request, response) {
 });
 
 router.get('/students', async (request, response) => {
-    try {
-        let dbRows = await db.getAllStudents();
-        await response.json(dbRows);
-    } catch (e) {
-        console.error(e);
-        await response.status(500).json({
-            error: e
-        });
-    }
+   try {
+       let dbRows = await db.getAllStudents();
+       await response.json(dbRows);
+   } catch (e) {
+       console.error(e);
+       await response.status(500).json({
+           error: e
+       });
+   }
 });
 
 router.get('/students/:studentId', async function (request, response) {

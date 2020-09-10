@@ -25,30 +25,30 @@ const useStyles = makeStyles({
 
 function App() {
     const classes = useStyles();
-    return (
-        <div className={classes.root}>
-            <Container maxWidth="xl">
+      return (
+          <div className={classes.root}>
+              <Container maxWidth="xl">
 
-                <Router>
+                  <Router>
 
-                    <AppBar position="static" className={classes.appbar}>
-                        <Toolbar>
-                            <Typography variant="h6">
+                      <AppBar position="static" className={classes.appbar}>
+                          <Toolbar>
+                              <Typography variant="h6">
 
-                                <NavBar />
-                            </Typography>
-                        </Toolbar>
-                    </AppBar>
-                    <Switch>
-                        <Route exact path="/" component={Students} />
-                        <Route path="/AddStudent" component={AddStudent}/>
-                        <Route path="/EditStudent/:studentId" component={EditStudent}/>
-                    </Switch>
-                </Router>
+                                  <NavBar />
+                              </Typography>
+                          </Toolbar>
+                      </AppBar>
+                      <Switch>
+                          <Route exact path="/" component={Students} />
+                          <Route path="/AddStudent" component={AddStudent}/>
+                          <Route path="/EditStudent/:studentId" component={EditStudent}/>
+                      </Switch>
+                  </Router>
 
 
-            </Container>
-        </div>
+              </Container>
+          </div>
     );
 }
 
