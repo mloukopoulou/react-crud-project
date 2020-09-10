@@ -8,6 +8,8 @@ import { useHistory } from "react-router-dom";
 
 import axios from "axios";
 
+require("dotenv").config();
+
 const useStyles = makeStyles((theme) => ({
     root: {
         '& .MuiTextField-root': {
@@ -31,7 +33,7 @@ export default function AddStudent(props) {
     };
 
     const saveStudent = async (rowData) => {
-        const result = await axios.put(process.env.REACT_APP_API_URL + '/students', rowData);
+        const result = await axios.put(process.env.REACT_APP_API_URL, rowData);
 
         if (result.status !== 200) {
             alert('Πρόβλημα κατά την επικοινωνία με την βάση.');

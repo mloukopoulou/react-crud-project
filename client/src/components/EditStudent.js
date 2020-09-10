@@ -8,6 +8,8 @@ import Typography from "@material-ui/core/Typography/Typography";
 import TextField from "@material-ui/core/TextField/TextField";
 import SaveIcon from '@material-ui/icons/Save';
 
+require("dotenv").config();
+
 const useStyles = makeStyles((theme) => ({
     root: {
         '& .MuiTextField-root': {
@@ -27,7 +29,7 @@ export default function EditStudent(props) {
 
     useEffect(() => {
         const getStudent = async () => {
-            const result = await axios(process.env.REACT_APP_API_URL + '/students/' + studentId)
+            const result = await axios(process.env.REACT_APP_API_URL + "/" + studentId)
 
             if (result.status !== 200) {
                 alert('Πρόβλημα κατά την επικοινωνία με την βάση.');
@@ -46,7 +48,7 @@ export default function EditStudent(props) {
     };
 
     const updateStudent = async (rowData) => {
-        const result = await axios.post(process.env.REACT_APP_API_URL + '/students/' + studentId, rowData);
+        const result = await axios.post(process.env.REACT_APP_API_URL + "/" + studentId, rowData);
 
         if (result.status !== 200) {
             alert('Πρόβλημα κατά την επικοινωνία με την βάση.');
