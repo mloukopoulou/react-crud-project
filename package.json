@@ -1,0 +1,16 @@
+{
+  "name": "react-crud-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": "12.18.3",
+    "npm": "6.14.6"
+  },
+  "scripts": {
+    "start": "cd server && npm install && node api",
+    "heroku-postbuild": "cd client && npm install  && npm run build"
+  },
+  "author": "",
+  "license": "ISC"
+}
